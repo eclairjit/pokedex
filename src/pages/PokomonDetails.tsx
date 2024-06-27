@@ -17,7 +17,7 @@ const PokomonDetails = () => {
 			data.order && setOrder(data.order);
 			data.height && setHeight(data.height);
 			data.weight && setWeight(data.weight);
-			data.id && setId(data.id);
+			setTimeout(data.id && setId(data.id), 500);
 		};
 
 		getPokemonDetails();
