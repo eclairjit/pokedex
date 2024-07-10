@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { baseImageUrl, fetchPokemonDetails } from "../api";
 import { Card } from "../components/ui/CardHoverEffect";
 import { useEffect, useState } from "react";
+import Loader from "../components/Loader";
 
 const PokomonDetails = () => {
 	const { name } = useParams();
@@ -11,6 +12,8 @@ const PokomonDetails = () => {
 	const [weight, setWeight] = useState(null);
 	const [id, setId] = useState(null);
 
+	const [loading, setLoading] = useState(true);
+
 	useEffect(() => {
 		const getPokemonDetails = async () => {
 			const data = await fetchPokemonDetails((() => (name ? name : ""))());
@@ -18,12 +21,18 @@ const PokomonDetails = () => {
 			data.height && setHeight(data.height);
 			data.weight && setWeight(data.weight);
 			data.id && setId(data.id);
+
+			setLoading(false);
 		};
 
 		getPokemonDetails();
 	}, []);
 
-	return id ? (
+	return loading ? (
+		<div className="w-screen h-screen flex justify-center items-center text-white">
+			<Loader />
+		</div>
+	) : id ? (
 		<div className="w-screen h-screen flex justify-center items-center">
 			<Card className="w-96 h-96">
 				<div className="w-full h-full">
