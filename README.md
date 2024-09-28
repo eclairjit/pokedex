@@ -1,30 +1,45 @@
-# React + TypeScript + Vite
+# Pokedex | Pokémon Data Viewer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[Live Link](https://pokedex-by-eclair.netlify.app/)
 
-Currently, two official plugins are available:
+## Introduction
+Pokedex is a web application that allows users to view detailed information about Pokémon. It fetches data from the PokeAPI and provides a clean, intuitive interface for users to explore Pokémon attributes like type, abilities, and stats.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tech Stack
+- Frontend: React, Tailwind CSS, Zustand  
+- Data API: PokeAPI  
+- UI Library: Acertinity UI
 
-## Expanding the ESLint configuration
+## Features
+- Search Functionality: Users can search for Pokémon by name and filter through various attributes.
+- Responsive Design: Built with Tailwind CSS and Acertinity UI for an adaptive interface across devices.
+- State Management: Zustand is used to handle global state efficiently without unnecessary complexity.
+- Data Fetching: PokeAPI is used to retrieve Pokémon information in real-time.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+## Installation and Setup
+- Clone the repository:
+```bash
+git clone https://github.com/eclairjit/pokedex.git
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- Navigate to the project folder:
+```bash
+cd pokedex
+```
+
+- Install dependencies:
+```bash
+npm install
+```
+
+- Run the application:
+```bash
+npm run dev
+```
+
+## Usage
+Search for Pokémon by name to retrieve information such as abilities, types, and base stats.
+The user interface adapts across devices, offering an optimized experience whether on desktop or mobile.
+
+## Contributing
+Feel free to submit issues, feature requests, or pull requests. Contributions to improve features or optimize performance are always welcome!
